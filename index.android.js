@@ -13,6 +13,11 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Button from './src/component/Button';
+import MyImage from './src/component/MyImage';
+import MyText from './src/component/MyText';
+import Blink from './src/component/Blink';
+import FlexDimensionsBasics from './src/component/FlexDimensionsBasics';
+
 
 class AwesomeProject extends Component {
 
@@ -23,14 +28,13 @@ class AwesomeProject extends Component {
 
     render() {
         return (
+            // <View style={styles.container}>
+            //     {/* 可以传递字符串，数字，和对象 */}
+            //     <FlexDimensionsBasics />
+            // </View>
+            // 尝试把`flexDirection`改为`column`看看
             <View style={styles.container}>
-                {/* 可以传递字符串，数字，和对象 */}
-                <Button text="确定" beijingyanse="red" date="2016-9-21" dianjishijian={() => {
-                    alert('你点击了确定!')
-                }}/>
-                <Button text='取消' beijingyanse="grey" dianjishijian={() => {
-                    alert('你点击了取消!')
-                }}/>
+                <FlexDimensionsBasics/>
             </View>
         );
     }
@@ -45,4 +49,4 @@ const styles = StyleSheet.create({
     },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('AwesomeProject', () =>AwesomeProject);
