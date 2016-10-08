@@ -4,7 +4,7 @@
 
 import React, {Component} from 'react';
 import{AppRegistry, StyleSheet, ScrollView, Image, Text, View} from 'react-native';
-import discover_list from './src/page/discover_list';
+import DiscoverList from './src/page/discover_list';
 // var {
 //     AppRegistry,
 // } = React;
@@ -18,7 +18,7 @@ class AwesomeProject extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <discover_list/>
+                <DiscoverList/>
             </View>
         );
     }

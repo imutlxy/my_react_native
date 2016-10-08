@@ -40,15 +40,17 @@ export default class discover_list extends Component {
     getData() {
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         var that = this;
-        var baseURL = Url.discover_list + '?type=' + this.state.type;
+        var baseURL = Url.host_name + Url.discover_list + '?type=' + this.state.type;
         //开启loading
         this.setState({
             show: false
         });
         HttpUtil.get(baseURL, function (data) {
-            if (!data.books || !data.books.length) {
-                return alert('服务出错');
-            }
+            alert(data.toString());
+
+            // if (!data.books || !data.books.length) {
+            //     return alert('服务出错');
+            // }
             var postList = data.listDynamic;
             that.setState({
                 dataSource: ds.cloneWithRows(postList),
@@ -69,16 +71,19 @@ export default class discover_list extends Component {
             <View>
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={this._renderRow}
+                    renderRow={this._renderRow(this.state.dataSource)}
+                    /*renderRow={(rowData) => <Text>{rowData.userName}</Text>}*/
                 />
             </View>
         );
     }
 
     //渲染每个item
-    _renderRow(row) {
+    _renderRow(rowData) {
         return (
-            <DiscoverItem row={row} onPress={this._loadPage.bind(this, row.id)}/>
+            <DiscoverItem row={rowData}
+                // {/*onPress={this._loadPage.bind(this, row.id)}*/}
+            />
         );
     }
 

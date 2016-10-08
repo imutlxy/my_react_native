@@ -17,6 +17,7 @@ var DiscoverList = React.createClass({
                 <View style={[styles.center]}>
                     {/*<Image source={{uri: row.image}} style={styles.item_img}/>*/}
                     <Text>{row.userName}</Text>
+                    <View style={styles.divider}/>
                 </View>
                 {/*// <View style={styles.content}>*/}
                 {/*//     <View>*/}
@@ -49,6 +50,11 @@ var styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 5,
         borderColor: '#ccc'
+    },
+    divider: {
+        height: 1,
+        width: 300,
+        backgroundColor: '#000000',
     },
 });
 module.exports = DiscoverList;
